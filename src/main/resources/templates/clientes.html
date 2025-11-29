@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="/css/clientes.css">
+</head>
+
+<body class="clientes-bg">
+
+<div class="clientes-container">
+
+    <!-- ENCABEZADO -->
+    <header class="clientes-header">
+        <a th:href="@{/home}" class="back-link">← Volver al panel</a>
+        <h1>GESTIÓN DE CLIENTES</h1>
+    </header>
+
+    <div class="clientes-grid">
+
+        <!-- FORMULARIO -->
+        <section class="card form-card">
+            <h2 th:text="${cliente != null and cliente.id != null ? 'Actualizar cliente' : 'Registrar cliente'}">
+                Registrar cliente
+            </h2>
+
+            <form th:action="@{/clientes/guardar}" method="post" class="client-form">
+
+                <!-- id oculto para detectar si es edición -->
+                <input type="hidden" name="id" th:value="${cliente.id}" />
+
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" name="nombre"
+                           th:value="${cliente.nombre}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input id="telefono" type="text" name="telefono"
+                           th:value="${cliente.telefono}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input id="correo" type="email" name="correo"
+                           th:value="${cliente.correo}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input id="direccion" type="text" name="direccion"
+                           th:value="${cliente.direccion}" required>
+                </div>
+
+                <!-- Botones dinámicos -->
+                <button type="submit" class="btn-primary"
+                        th:if="${cliente == null or cliente.id == null}">
+                    Guardar
+                </button>
+
+                <button type="submit" class="btn-update"
+                        th:if="${cliente != null and cliente.id != null}">
+                    Actualizar
+                </button>
+
+            </form>
+        </section>
+
+        <!-- TABLA -->
+        <section class="card table-card">
+            <h2>Listado de Clientes</h2>
+
+            <table class="clients-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="c : ${clientes}">
+                    <td th:text="${c.id}">1</td>
+                    <td th:text="${c.nombre}">Nombre</td>
+                    <td th:text="${c.telefono}">300000000</td>
+                    <td th:text="${c.correo}">correo@dom.com</td>
+                    <td th:text="${c.direccion}">Calle 1</td>
+                    <td class="acciones">
+                        <a th:href="@{'/clientes/editar/' + ${c.id}}" class="link-editar">Editar</a>
+                        <a th:href="@{'/clientes/eliminar/' + ${c.id}}" class="link-eliminar">Eliminar</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+</div>
+
+</body>
+</html>

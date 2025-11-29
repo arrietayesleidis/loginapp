@@ -1,0 +1,201 @@
+/* Fondo general */
+.clientes-bg {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top left, #0d2a52, #0b1220 70%);
+    color: #f9fafb;
+}
+
+/* Contenedor principal */
+.clientes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 50px;
+}
+
+/* Header */
+.clientes-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 20px;
+    margin-bottom: 25px;
+}
+
+.clientes-header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Grid formulario + tabla */
+.clientes-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    gap: 25px;
+}
+
+/* Tarjetas */
+.card {
+    background: rgba(15, 23, 42, 0.97);
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.card h2 {
+    margin: 0 0 15px;
+    font-size: 20px;
+}
+
+/* Formulario */
+.client-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+}
+
+.form-group input {
+    border-radius: 8px;
+    border: 1px solid #4b5563;
+    padding: 8px 10px;
+    font-size: 14px;
+    background: #020617;
+    color: #f9fafb;
+    outline: none;
+    transition: 0.25s;
+}
+
+.form-group input:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 1px rgba(14,165,233,0.5);
+}
+
+/* Botón guardar */
+.btn-primary {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #0ea5e9;
+    color: #020617;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: #0284c7;
+    transform: translateY(-1px);
+}
+
+/* Botón actualizar */
+.btn-update {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #facc15;
+    color: #020617;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-update:hover {
+    background: #eab308;
+    transform: translateY(-1px);
+}
+
+/* Tabla */
+.clients-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #020617;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.clients-table thead {
+    background: #0b1120;
+}
+
+.clients-table th,
+.clients-table td {
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.clients-table th {
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #1f2937;
+}
+
+.clients-table tbody tr:nth-child(even) {
+    background: #020617;
+}
+
+.clients-table tbody tr:nth-child(odd) {
+    background: #020617ee;
+}
+
+.clients-table tbody tr:hover {
+    background: #111827;
+}
+
+/* Acciones */
+.acciones {
+    white-space: nowrap;
+}
+
+.link-editar {
+    color: #38bdf8;
+    font-size: 13px;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.link-eliminar {
+    color: #f87171;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.link-editar:hover,
+.link-eliminar:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .clientes-grid {
+        grid-template-columns: 1fr;
+    }
+}

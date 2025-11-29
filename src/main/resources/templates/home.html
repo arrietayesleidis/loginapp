@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administrativo</title>
+    <link rel="stylesheet" href="/css/panel.css">
+</head>
+
+<body>
+
+<div class="container-flex">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 class="sidebar-title">
+            <span>PANEL</span>
+            <span>ADMINISTRATIVO</span>
+        </h2>
+
+        <div class="avatar">👨‍💼</div>
+
+        <h3 class="sidebar-name" th:text="${nombre}">Usuario</h3>
+        <p class="sidebar-mail" th:text="${correo}">correo@ejemplo.com</p>
+        <small class="sidebar-role" th:text="'Rol: ' + ${rol}">Rol: Administrador</small>
+
+        <div class="links-row">
+            <a href="https://facebook.com" target="_blank" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" class="icon">
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" class="icon">
+            </a>
+            <a href="https://unitecnar.edu.co" target="_blank" class="icon-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/545/545674.png" class="icon">
+            </a>
+        </div>
+
+        <a th:href="@{/logout}" class="logout-btn">⏻ Salir</a>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="content">
+
+        <div class="top-tabs">
+            <a th:href="@{/usuarios}">Gestión de Usuarios</a>
+            <a th:href="@{/clientes}">Gestión de Clientes</a>
+        </div>
+
+        <div class="content-main">
+            <h1>BIENVENIDO AL SISTEMA</h1>
+
+           
+        </div>
+
+        <div class="footer-dev">
+            Desarrollado por:<br>
+            Yesleidis Arrieta Muñoz y Hans Patiño
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
